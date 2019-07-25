@@ -1,0 +1,6 @@
+version: "Apple Swift version 5.0.1 (swiftlang-1001.0.82.4 clang-1001.0.46.5)"
+options: "f2eb55704778f0375d009e1e8772ce97"
+build_time: [1564057993, 292981000]
+inputs:
+  "/Users/misiek/Desktop/TODO/TODO/ViewController.swift": [1564057966, 130060350]
+  "/Users/misiek/Desktop/TODO/TODO/AppDelegate.swift": [1564057966, 114313996]
