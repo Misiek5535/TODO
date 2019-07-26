@@ -19,7 +19,12 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
+        //about app button
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "About", style: .plain, target: self, action: #selector(AboutApp))
+        
+        //add button
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Add", style: .plain, target: self, action: #selector(Add))
+        //app name
         navigationItem.title = "To Do"
         
         taskTableView.dataSource = self
@@ -52,7 +57,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         return cell
     }
     
-    
     //segue to info
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
@@ -73,12 +77,14 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
     }
     
-    //reload data after return to viewcontroller
-    
-    
     //segue to add
     @objc func Add() {
-        performSegue(withIdentifier: "addSegue", sender: "")
+        performSegue(withIdentifier: "addSegue", sender: nil)
+    }
+    
+    //segue to about app
+    @objc func AboutApp() {
+        performSegue(withIdentifier: "aboutSegue", sender: nil)
     }
 }
 
