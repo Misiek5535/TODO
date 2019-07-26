@@ -187,15 +187,16 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 #endif
 
 @class UITextField;
+@class UISwitch;
 @class NSBundle;
 @class NSCoder;
 
 SWIFT_CLASS("_TtC4TODO17AddViewController")
 @interface AddViewController : UIViewController
 @property (nonatomic, weak) IBOutlet UITextField * _Null_unspecified newToDoTextField;
+@property (nonatomic, weak) IBOutlet UISwitch * _Null_unspecified Important;
 - (void)viewDidLoad;
 - (void)Add;
-- (IBAction)addClicked:(id _Nonnull)sender;
 - (void)backAction;
 - (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;

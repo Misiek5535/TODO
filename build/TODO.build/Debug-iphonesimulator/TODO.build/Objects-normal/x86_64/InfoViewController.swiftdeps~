@@ -6,6 +6,7 @@ provides-nominal:
 provides-member:
 - ["4TODO18InfoViewControllerC", ""]
 provides-dynamic-lookup:
+- "CompleteToDO"
 - "ToDoItemName"
 - "backAction"
 - "deleteToDoItem"
@@ -175,6 +176,7 @@ depends-member:
 - !private ["SH", "viewContext"]
 - !private ["SH", "viewDidLoad"]
 - !private ["4TODO18InfoViewControllerC", "AppDelegate"]
+- ["4TODO18InfoViewControllerC", "CompleteToDO"]
 - ["4TODO18InfoViewControllerC", "ToDoItem"]
 - ["4TODO18InfoViewControllerC", "ToDoItemName"]
 - !private ["4TODO18InfoViewControllerC", "UIApplication"]
@@ -240,6 +242,7 @@ depends-member:
 - !private ["So22NSManagedObjectContextC", "delete"]
 - !private ["So22NSManagedObjectContextC", "object"]
 - !private ["So8NSObjectC", "AppDelegate"]
+- ["So8NSObjectC", "CompleteToDO"]
 - ["So8NSObjectC", "ToDoItem"]
 - ["So8NSObjectC", "ToDoItemName"]
 - !private ["So8NSObjectC", "UIApplication"]
@@ -394,6 +397,7 @@ depends-member:
 - !private ["So30UIPasteConfigurationSupportingP", "toDoItem"]
 - !private ["So30UIPasteConfigurationSupportingP", "viewDidLoad"]
 - !private ["So11UIResponderC", "AppDelegate"]
+- ["So11UIResponderC", "CompleteToDO"]
 - ["So11UIResponderC", "ToDoItem"]
 - ["So11UIResponderC", "ToDoItemName"]
 - !private ["So11UIResponderC", "UIApplication"]
@@ -494,6 +498,7 @@ depends-member:
 - !private ["So23UIUserActivityRestoringP", "viewDidLoad"]
 - !private ["So6UIViewC", "text"]
 - !private ["So16UIViewControllerC", "AppDelegate"]
+- ["So16UIViewControllerC", "CompleteToDO"]
 - ["So16UIViewControllerC", "ToDoItem"]
 - ["So16UIViewControllerC", "ToDoItemName"]
 - !private ["So16UIViewControllerC", "UIApplication"]
@@ -637,4 +642,4 @@ depends-external:
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator12.4.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIKit.apinotes"
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator12.4.sdk/System/Library/Frameworks/CoreText.framework/Headers/CoreText.apinotes"
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator12.4.sdk/System/Library/Frameworks/Security.framework/Headers/Security.apinotes"
-interface-hash: "f96ea0758cc6e38f1379ef6c5f2e972e"
+interface-hash: "7c80c0ef394937453b2f71d7317b7280"

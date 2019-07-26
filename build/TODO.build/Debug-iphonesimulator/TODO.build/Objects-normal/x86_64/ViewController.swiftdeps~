@@ -32,6 +32,7 @@ depends-top-level:
 - "UITableViewDelegate"
 - "UITextField"
 - "UIViewController"
+- !private "UnicodeScalarType"
 - "ViewController"
 depends-member:
 - !private ["4TODO11AppDelegateC", "persistentContainer"]

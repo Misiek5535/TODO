@@ -14,14 +14,13 @@ provides-dynamic-lookup:
 - "viewDidLoad"
 depends-top-level:
 - !private "=="
+- !private "AddViewController"
 - !private "AppDelegate"
 - "AssignmentPrecedence"
-- !private "BooleanLiteralType"
 - "CastingPrecedence"
 - "IndexPath"
 - !private "InfoViewController"
 - "Int"
-- !private "StringLiteralType"
 - "ToDoItem"
 - !private "UIApplication"
 - !private "UIBarButtonItem"
@@ -32,9 +31,9 @@ depends-top-level:
 - "UITableViewDelegate"
 - "UITextField"
 - "UIViewController"
-- !private "UnicodeScalarType"
 - "ViewController"
 depends-member:
+- !private ["4TODO17AddViewControllerC", "previousVC"]
 - !private ["4TODO11AppDelegateC", "persistentContainer"]
 - !private ["Sa", "count"]
 - !private ["Sa", "subscript"]
@@ -74,6 +73,7 @@ depends-member:
 - ["s7CVarArgP", "numberOfSectionsInTableView"]
 - !private ["s7CVarArgP", "performSegue"]
 - !private ["s7CVarArgP", "persistentContainer"]
+- !private ["s7CVarArgP", "previousVC"]
 - !private ["s7CVarArgP", "reloadData"]
 - !private ["s7CVarArgP", "rightBarButtonItem"]
 - ["s7CVarArgP", "scrollViewDidChangeAdjustedContentInset"]
@@ -136,6 +136,7 @@ depends-member:
 - ["s28CustomDebugStringConvertibleP", "numberOfSectionsInTableView"]
 - !private ["s28CustomDebugStringConvertibleP", "performSegue"]
 - !private ["s28CustomDebugStringConvertibleP", "persistentContainer"]
+- !private ["s28CustomDebugStringConvertibleP", "previousVC"]
 - !private ["s28CustomDebugStringConvertibleP", "reloadData"]
 - !private ["s28CustomDebugStringConvertibleP", "rightBarButtonItem"]
 - !private ["s28CustomDebugStringConvertibleP", "row"]
@@ -198,6 +199,7 @@ depends-member:
 - ["s23CustomStringConvertibleP", "numberOfSectionsInTableView"]
 - !private ["s23CustomStringConvertibleP", "performSegue"]
 - !private ["s23CustomStringConvertibleP", "persistentContainer"]
+- !private ["s23CustomStringConvertibleP", "previousVC"]
 - !private ["s23CustomStringConvertibleP", "reloadData"]
 - !private ["s23CustomStringConvertibleP", "rightBarButtonItem"]
 - !private ["s23CustomStringConvertibleP", "row"]
@@ -269,6 +271,7 @@ depends-member:
 - !private ["SQ", "performSegue"]
 - !private ["SQ", "persistentContainer"]
 - !private ["SQ", "plain"]
+- !private ["SQ", "previousVC"]
 - !private ["SQ", "reloadData"]
 - !private ["SQ", "rightBarButtonItem"]
 - !private ["SQ", "row"]
@@ -332,6 +335,7 @@ depends-member:
 - !private ["SH", "performSegue"]
 - !private ["SH", "persistentContainer"]
 - !private ["SH", "plain"]
+- !private ["SH", "previousVC"]
 - !private ["SH", "reloadData"]
 - !private ["SH", "rightBarButtonItem"]
 - !private ["SH", "row"]
@@ -364,6 +368,7 @@ depends-member:
 - ["SH", "viewForZooming"]
 - ["SH", "viewForZoomingInScrollView"]
 - !private ["10Foundation9IndexPathV", "row"]
+- !private ["4TODO18InfoViewControllerC", "previousVC"]
 - !private ["4TODO18InfoViewControllerC", "toDoItem"]
 - !private ["SM", "count"]
 - !private ["SM", "name"]
@@ -389,6 +394,7 @@ depends-member:
 - ["So8NSCodingP", "numberOfSections"]
 - ["So8NSCodingP", "numberOfSectionsInTableView"]
 - !private ["So8NSCodingP", "performSegue"]
+- !private ["So8NSCodingP", "previousVC"]
 - !private ["So8NSCodingP", "reloadData"]
 - !private ["So8NSCodingP", "rightBarButtonItem"]
 - ["So8NSCodingP", "scrollViewDidChangeAdjustedContentInset"]
@@ -430,6 +436,7 @@ depends-member:
 - ["So26NSExtensionRequestHandlingP", "numberOfSections"]
 - ["So26NSExtensionRequestHandlingP", "numberOfSectionsInTableView"]
 - !private ["So26NSExtensionRequestHandlingP", "performSegue"]
+- !private ["So26NSExtensionRequestHandlingP", "previousVC"]
 - ["So26NSExtensionRequestHandlingP", "scrollViewDidChangeAdjustedContentInset"]
 - ["So26NSExtensionRequestHandlingP", "scrollViewDidEndDecelerating"]
 - ["So26NSExtensionRequestHandlingP", "scrollViewDidEndDragging"]
@@ -459,6 +466,7 @@ depends-member:
 - !private ["So15NSManagedObjectC", "name"]
 - !private ["So22NSManagedObjectContextC", "fetch"]
 - ["So8NSObjectC", "Add"]
+- !private ["So8NSObjectC", "AddViewController"]
 - !private ["So8NSObjectC", "AppDelegate"]
 - ["So8NSObjectC", "IndexPath"]
 - !private ["So8NSObjectC", "InfoViewController"]
@@ -489,6 +497,7 @@ depends-member:
 - !private ["So8NSObjectC", "performSegue"]
 - !private ["So8NSObjectC", "persistentContainer"]
 - ["So8NSObjectC", "prepare"]
+- !private ["So8NSObjectC", "previousVC"]
 - !private ["So8NSObjectC", "reloadData"]
 - !private ["So8NSObjectC", "rightBarButtonItem"]
 - ["So8NSObjectC", "scrollViewDidChangeAdjustedContentInset"]
@@ -541,6 +550,7 @@ depends-member:
 - ["So8NSObjectP", "numberOfSectionsInTableView"]
 - !private ["So8NSObjectP", "performSegue"]
 - !private ["So8NSObjectP", "persistentContainer"]
+- !private ["So8NSObjectP", "previousVC"]
 - !private ["So8NSObjectP", "reloadData"]
 - !private ["So8NSObjectP", "rightBarButtonItem"]
 - ["So8NSObjectP", "scrollViewDidChangeAdjustedContentInset"]
@@ -622,6 +632,7 @@ depends-member:
 - ["So21UIAppearanceContainerP", "numberOfSections"]
 - ["So21UIAppearanceContainerP", "numberOfSectionsInTableView"]
 - !private ["So21UIAppearanceContainerP", "performSegue"]
+- !private ["So21UIAppearanceContainerP", "previousVC"]
 - !private ["So21UIAppearanceContainerP", "reloadData"]
 - ["So21UIAppearanceContainerP", "scrollViewDidChangeAdjustedContentInset"]
 - ["So21UIAppearanceContainerP", "scrollViewDidEndDecelerating"]
@@ -666,6 +677,7 @@ depends-member:
 - ["So18UIContentContainerP", "numberOfSections"]
 - ["So18UIContentContainerP", "numberOfSectionsInTableView"]
 - !private ["So18UIContentContainerP", "performSegue"]
+- !private ["So18UIContentContainerP", "previousVC"]
 - ["So18UIContentContainerP", "scrollViewDidChangeAdjustedContentInset"]
 - ["So18UIContentContainerP", "scrollViewDidEndDecelerating"]
 - ["So18UIContentContainerP", "scrollViewDidEndDragging"]
@@ -724,6 +736,7 @@ depends-member:
 - ["So18UIFocusEnvironmentP", "numberOfSections"]
 - ["So18UIFocusEnvironmentP", "numberOfSectionsInTableView"]
 - !private ["So18UIFocusEnvironmentP", "performSegue"]
+- !private ["So18UIFocusEnvironmentP", "previousVC"]
 - !private ["So18UIFocusEnvironmentP", "reloadData"]
 - ["So18UIFocusEnvironmentP", "scrollViewDidChangeAdjustedContentInset"]
 - ["So18UIFocusEnvironmentP", "scrollViewDidEndDecelerating"]
@@ -790,6 +803,7 @@ depends-member:
 - ["So30UIPasteConfigurationSupportingP", "numberOfSectionsInTableView"]
 - !private ["So30UIPasteConfigurationSupportingP", "performSegue"]
 - !private ["So30UIPasteConfigurationSupportingP", "persistentContainer"]
+- !private ["So30UIPasteConfigurationSupportingP", "previousVC"]
 - !private ["So30UIPasteConfigurationSupportingP", "reloadData"]
 - ["So30UIPasteConfigurationSupportingP", "scrollViewDidChangeAdjustedContentInset"]
 - ["So30UIPasteConfigurationSupportingP", "scrollViewDidEndDecelerating"]
@@ -817,6 +831,7 @@ depends-member:
 - ["So30UIPasteConfigurationSupportingP", "viewForZooming"]
 - ["So30UIPasteConfigurationSupportingP", "viewForZoomingInScrollView"]
 - ["So11UIResponderC", "Add"]
+- !private ["So11UIResponderC", "AddViewController"]
 - !private ["So11UIResponderC", "AppDelegate"]
 - ["So11UIResponderC", "IndexPath"]
 - !private ["So11UIResponderC", "InfoViewController"]
@@ -842,6 +857,7 @@ depends-member:
 - !private ["So11UIResponderC", "performSegue"]
 - !private ["So11UIResponderC", "persistentContainer"]
 - ["So11UIResponderC", "prepare"]
+- !private ["So11UIResponderC", "previousVC"]
 - !private ["So11UIResponderC", "reloadData"]
 - ["So11UIResponderC", "scrollViewDidChangeAdjustedContentInset"]
 - ["So11UIResponderC", "scrollViewDidEndDecelerating"]
@@ -886,6 +902,7 @@ depends-member:
 - ["So30UIResponderStandardEditActionsP", "numberOfSectionsInTableView"]
 - !private ["So30UIResponderStandardEditActionsP", "performSegue"]
 - !private ["So30UIResponderStandardEditActionsP", "persistentContainer"]
+- !private ["So30UIResponderStandardEditActionsP", "previousVC"]
 - !private ["So30UIResponderStandardEditActionsP", "reloadData"]
 - ["So30UIResponderStandardEditActionsP", "scrollViewDidChangeAdjustedContentInset"]
 - ["So30UIResponderStandardEditActionsP", "scrollViewDidEndDecelerating"]
@@ -968,6 +985,7 @@ depends-member:
 - ["So16UIStateRestoringP", "numberOfSections"]
 - ["So16UIStateRestoringP", "numberOfSectionsInTableView"]
 - !private ["So16UIStateRestoringP", "performSegue"]
+- !private ["So16UIStateRestoringP", "previousVC"]
 - ["So16UIStateRestoringP", "scrollViewDidChangeAdjustedContentInset"]
 - ["So16UIStateRestoringP", "scrollViewDidEndDecelerating"]
 - ["So16UIStateRestoringP", "scrollViewDidEndDragging"]
@@ -1081,6 +1099,7 @@ depends-member:
 - ["So18UITraitEnvironmentP", "numberOfSections"]
 - ["So18UITraitEnvironmentP", "numberOfSectionsInTableView"]
 - !private ["So18UITraitEnvironmentP", "performSegue"]
+- !private ["So18UITraitEnvironmentP", "previousVC"]
 - !private ["So18UITraitEnvironmentP", "reloadData"]
 - ["So18UITraitEnvironmentP", "scrollViewDidChangeAdjustedContentInset"]
 - ["So18UITraitEnvironmentP", "scrollViewDidEndDecelerating"]
@@ -1124,6 +1143,7 @@ depends-member:
 - ["So23UIUserActivityRestoringP", "numberOfSectionsInTableView"]
 - !private ["So23UIUserActivityRestoringP", "performSegue"]
 - !private ["So23UIUserActivityRestoringP", "persistentContainer"]
+- !private ["So23UIUserActivityRestoringP", "previousVC"]
 - !private ["So23UIUserActivityRestoringP", "reloadData"]
 - ["So23UIUserActivityRestoringP", "scrollViewDidChangeAdjustedContentInset"]
 - ["So23UIUserActivityRestoringP", "scrollViewDidEndDecelerating"]
@@ -1158,6 +1178,7 @@ depends-member:
 - !private ["So6UIViewC", "text"]
 - !private ["So6UIViewC", "textLabel"]
 - ["So16UIViewControllerC", "Add"]
+- !private ["So16UIViewControllerC", "AddViewController"]
 - !private ["So16UIViewControllerC", "AppDelegate"]
 - ["So16UIViewControllerC", "IndexPath"]
 - !private ["So16UIViewControllerC", "InfoViewController"]
@@ -1180,6 +1201,7 @@ depends-member:
 - ["So16UIViewControllerC", "numberOfSectionsInTableView"]
 - !private ["So16UIViewControllerC", "performSegue"]
 - ["So16UIViewControllerC", "prepare"]
+- !private ["So16UIViewControllerC", "previousVC"]
 - ["So16UIViewControllerC", "scrollViewDidChangeAdjustedContentInset"]
 - ["So16UIViewControllerC", "scrollViewDidEndDecelerating"]
 - ["So16UIViewControllerC", "scrollViewDidEndDragging"]
@@ -1203,6 +1225,7 @@ depends-member:
 - ["So16UIViewControllerC", "viewForZooming"]
 - ["So16UIViewControllerC", "viewForZoomingInScrollView"]
 - ["4TODO14ViewControllerC", "Add"]
+- !private ["4TODO14ViewControllerC", "AddViewController"]
 - !private ["4TODO14ViewControllerC", "AppDelegate"]
 - ["4TODO14ViewControllerC", "IndexPath"]
 - !private ["4TODO14ViewControllerC", "InfoViewController"]
@@ -1279,6 +1302,7 @@ depends-member:
 - ["10Foundation27_KeyValueCodingAndObservingP", "numberOfSectionsInTableView"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "performSegue"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "persistentContainer"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "previousVC"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "reloadData"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "rightBarButtonItem"]
 - ["10Foundation27_KeyValueCodingAndObservingP", "scrollViewDidChangeAdjustedContentInset"]
@@ -1322,6 +1346,7 @@ depends-member:
 - !private ["s38__DefaultCustomPlaygroundQuickLookableP", "text"]
 - !private ["s38__DefaultCustomPlaygroundQuickLookableP", "textLabel"]
 depends-nominal:
+- !private "4TODO17AddViewControllerC"
 - !private "4TODO11AppDelegateC"
 - !private "Sa"
 - !private "s10ArraySliceV"
