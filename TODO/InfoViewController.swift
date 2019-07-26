@@ -11,6 +11,7 @@ import UIKit
 class InfoViewController: UIViewController {
 
     @IBOutlet weak var ToDoItemName: UITextField!
+    @IBOutlet weak var ToDoItemDescription: UITextField!
     
     var toDoItem = ToDoItem()
     var previousVC = ViewController()
@@ -20,6 +21,7 @@ class InfoViewController: UIViewController {
         
         // Do any additional setup after loading the view.
         ToDoItemName.text = toDoItem.name
+        ToDoItemDescription.text = toDoItem.todo_description
         
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "< Back", style: .plain, target: self, action: #selector(backAction))
         
@@ -43,6 +45,16 @@ class InfoViewController: UIViewController {
         }
     }
     
+    func editDescription() {
+        if let context = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext {
+            
+            context.object(with: toDoItem.objectID).setValue(ToDoItemDescription.text, forKey: "todo_description")
+            
+            (UIApplication.shared.delegate as? AppDelegate)?.saveContext()
+            ReloadPreviousVC()
+        }
+    }
+    
     @objc func deleteToDoItem() {
         if let context = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext {
             
@@ -58,6 +70,10 @@ class InfoViewController: UIViewController {
     @objc func backAction() {
         if ToDoItemName.text != toDoItem.name {
             editName()
+        }
+        
+        if ToDoItemDescription.text != toDoItem.todo_description {
+            editDescription()
         }
         
         self.navigationController?.popViewController(animated: true)

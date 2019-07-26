@@ -5,8 +5,10 @@ provides-member:
 - ["4TODO8ToDoItemC", ""]
 - ["4TODO8ToDoItemC", "fetchRequest"]
 - ["4TODO8ToDoItemC", "name"]
+- ["4TODO8ToDoItemC", "todo_description"]
 provides-dynamic-lookup:
 - "name"
+- "todo_description"
 depends-top-level:
 - "NSFetchRequest"
 - "String"
@@ -32,12 +34,14 @@ depends-member:
 - ["So15NSManagedObjectC", "ToDoItem"]
 - ["So15NSManagedObjectC", "fetchRequest"]
 - ["So15NSManagedObjectC", "name"]
+- ["So15NSManagedObjectC", "todo_description"]
 - ["So8NSObjectC", "NSFetchRequest"]
 - ["So8NSObjectC", "String"]
 - ["So8NSObjectC", "ToDoItem"]
 - ["So8NSObjectC", "fetchRequest"]
 - !private ["So8NSObjectC", "init"]
 - ["So8NSObjectC", "name"]
+- ["So8NSObjectC", "todo_description"]
 - !private ["So8NSObjectP", "NSFetchRequest"]
 - !private ["So8NSObjectP", "init"]
 - !private ["So24NSPersistentStoreRequestC", "init"]
@@ -47,6 +51,7 @@ depends-member:
 - ["4TODO8ToDoItemC", "deinit"]
 - ["4TODO8ToDoItemC", "fetchRequest"]
 - ["4TODO8ToDoItemC", "name"]
+- ["4TODO8ToDoItemC", "todo_description"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "NSFetchRequest"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "init"]
 depends-nominal:
@@ -93,4 +98,4 @@ depends-external:
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator12.4.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIKit.apinotes"
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator12.4.sdk/System/Library/Frameworks/CoreText.framework/Headers/CoreText.apinotes"
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator12.4.sdk/System/Library/Frameworks/Security.framework/Headers/Security.apinotes"
-interface-hash: "69d1c926cc3dc9eb1c1157772f7eb25c"
+interface-hash: "441e47559b16e8d1fa938f8b196904ce"

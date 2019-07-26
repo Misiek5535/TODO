@@ -34,11 +34,13 @@ class AddViewController: UIViewController {
                 if Important.isOn {
                     name = "❗️"
                     Important.isEnabled = false
+                    toDoItem.important = true
                 }
                 
                 name += (newToDoTextField.text)!
                 
                 toDoItem.name = name
+                toDoItem.todo_description = ""
 
                 (UIApplication.shared.delegate as? AppDelegate)?.saveContext()
                 

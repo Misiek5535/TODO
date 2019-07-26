@@ -1,11 +1,11 @@
 version: "Apple Swift version 5.0.1 (swiftlang-1001.0.82.4 clang-1001.0.46.5)"
 options: "f2eb55704778f0375d009e1e8772ce97"
-build_time: [1564144781, 812985000]
+build_time: [1564146597, 631846000]
 inputs:
-  "/Users/misiek/Desktop/TODO/TODO/AddViewController.swift": [1564144623, 668041547]
-  "/Users/misiek/Desktop/TODO/TODO/ViewController.swift": [1564142635, 199649479]
+  "/Users/misiek/Desktop/TODO/TODO/AddViewController.swift": [1564146206, 264443803]
+  "/Users/misiek/Desktop/TODO/TODO/ViewController.swift": [1564146249, 50959659]
   "/Users/misiek/Desktop/TODO/TODO/AppDelegate.swift": [1564139116, 835995878]
-  "/Users/misiek/Desktop/TODO/TODO/InfoViewController.swift": [1564143142, 293310050]
-  "/Users/misiek/Desktop/TODO/build/TODO.build/Debug-iphonesimulator/TODO.build/DerivedSources/CoreDataGenerated/ToDoItem/ToDoItem+CoreDataClass.swift": [1564144781, 796988814]
-  "/Users/misiek/Desktop/TODO/build/TODO.build/Debug-iphonesimulator/TODO.build/DerivedSources/CoreDataGenerated/ToDoItem/ToDoItem+CoreDataProperties.swift": [1564144781, 798358740]
-  "/Users/misiek/Desktop/TODO/build/TODO.build/Debug-iphonesimulator/TODO.build/DerivedSources/CoreDataGenerated/ToDoItem/ToDoItem+CoreDataModel.swift": [1564144781, 791270724]
+  "/Users/misiek/Desktop/TODO/TODO/InfoViewController.swift": [1564146049, 290643640]
+  "/Users/misiek/Desktop/TODO/build/TODO.build/Debug-iphonesimulator/TODO.build/DerivedSources/CoreDataGenerated/ToDoItem/ToDoItem+CoreDataClass.swift": [1564146197, 354160985]
+  "/Users/misiek/Desktop/TODO/build/TODO.build/Debug-iphonesimulator/TODO.build/DerivedSources/CoreDataGenerated/ToDoItem/ToDoItem+CoreDataProperties.swift": [1564146197, 355495459]
+  "/Users/misiek/Desktop/TODO/build/TODO.build/Debug-iphonesimulator/TODO.build/DerivedSources/CoreDataGenerated/ToDoItem/ToDoItem+CoreDataModel.swift": [1564146197, 332741860]
