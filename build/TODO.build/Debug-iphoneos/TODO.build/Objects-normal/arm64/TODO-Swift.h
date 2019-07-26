@@ -221,6 +221,7 @@ SWIFT_CLASS("_TtC4TODO11AppDelegate")
 SWIFT_CLASS("_TtC4TODO18InfoViewController")
 @interface InfoViewController : UIViewController
 @property (nonatomic, weak) IBOutlet UITextField * _Null_unspecified ToDoItemName;
+@property (nonatomic, weak) IBOutlet UITextField * _Null_unspecified ToDoItemDescription;
 - (void)viewDidLoad;
 - (IBAction)CompleteToDO:(id _Nonnull)sender;
 - (void)deleteToDoItem;
@@ -239,7 +240,9 @@ SWIFT_CLASS_NAMED("ToDoItem")
 
 
 @interface ToDoItem (SWIFT_EXTENSION(TODO))
+@property (nonatomic) BOOL important;
 @property (nonatomic, copy) NSString * _Nullable name;
+@property (nonatomic, copy) NSString * _Nullable todo_description;
 @end
 
 @class UITableView;
