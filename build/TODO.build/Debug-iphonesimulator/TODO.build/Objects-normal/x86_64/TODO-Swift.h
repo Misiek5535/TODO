@@ -219,7 +219,11 @@ SWIFT_CLASS("_TtC4TODO11AppDelegate")
 
 SWIFT_CLASS("_TtC4TODO18InfoViewController")
 @interface InfoViewController : UIViewController
+@property (nonatomic, weak) IBOutlet UITextField * _Null_unspecified ToDoItemName;
 - (void)viewDidLoad;
+- (IBAction)CompleteToDO:(id _Nonnull)sender;
+- (void)deleteToDoItem;
+- (void)backAction;
 - (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 @end
@@ -239,6 +243,7 @@ SWIFT_CLASS_NAMED("ToDoItem")
 
 @class UITableView;
 @class UITableViewCell;
+@class UIStoryboardSegue;
 
 SWIFT_CLASS("_TtC4TODO14ViewController")
 @interface ViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
@@ -248,6 +253,7 @@ SWIFT_CLASS("_TtC4TODO14ViewController")
 - (NSInteger)tableView:(UITableView * _Nonnull)tableView numberOfRowsInSection:(NSInteger)section SWIFT_WARN_UNUSED_RESULT;
 - (UITableViewCell * _Nonnull)tableView:(UITableView * _Nonnull)tableView cellForRowAtIndexPath:(NSIndexPath * _Nonnull)indexPath SWIFT_WARN_UNUSED_RESULT;
 - (void)tableView:(UITableView * _Nonnull)tableView didSelectRowAtIndexPath:(NSIndexPath * _Nonnull)indexPath;
+- (void)prepareForSegue:(UIStoryboardSegue * _Nonnull)segue sender:(id _Nullable)sender;
 - (void)Add;
 - (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;

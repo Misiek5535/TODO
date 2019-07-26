@@ -11,7 +11,9 @@ import UIKit
 class AddViewController: UIViewController {
 
     @IBOutlet weak var newToDoTextField: UITextField!
+    @IBOutlet weak var Important: UISwitch!
     
+    var previousVC = ViewController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,15 +23,26 @@ class AddViewController: UIViewController {
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "< Back", style: .plain, target: self, action: #selector(backAction))
     }
     
+    //navigationitem
     @objc func Add() {
         if newToDoTextField.text != "" {
             
             if let context = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext {
 
                 let toDoItem = ToDoItem(context: context)
-                toDoItem.name = newToDoTextField.text
+                var name = ""
+                if Important.isOn {
+                    name = "❗️"
+                    Important.isEnabled = false
+                }
+                
+                name += (newToDoTextField.text)!
+                
+                toDoItem.name = name
 
                 (UIApplication.shared.delegate as? AppDelegate)?.saveContext()
+                
+                ReloadPreviousVC()
                 
                 newToDoTextField.text = ""
                 _ = navigationController?.popToRootViewController(animated: true)
@@ -37,25 +50,11 @@ class AddViewController: UIViewController {
         }
     }
     
-    @IBAction func addClicked(_ sender: Any) {
-        
-        if newToDoTextField.text != "" {
-            
-            if let context = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext {
-                
-                let toDoItem = ToDoItem(context: context)
-                toDoItem.name = newToDoTextField.text
-                
-                (UIApplication.shared.delegate as? AppDelegate)?.saveContext()
-                
-                newToDoTextField.text = ""
-                
-                self.dismiss(animated: true, completion: nil)
-            }
-        }
-    }
-    
     @objc func backAction(){
         self.navigationController?.popViewController(animated: true)
+    }
+    
+    func ReloadPreviousVC() {
+        previousVC.getToDoItems()
     }
 }

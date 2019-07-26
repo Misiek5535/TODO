@@ -17,7 +17,6 @@ extension ToDoItem {
         return NSFetchRequest<ToDoItem>(entityName: "ToDoItem")
     }
 
-    @NSManaged public var dateadded: Date?
     @NSManaged public var name: String?
 
 }

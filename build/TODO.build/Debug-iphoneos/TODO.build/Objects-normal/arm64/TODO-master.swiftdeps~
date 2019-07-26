@@ -1,0 +1,11 @@
+version: "Apple Swift version 5.0.1 (swiftlang-1001.0.82.4 clang-1001.0.46.5)"
+options: "f1d70b4285441251c713e6317cb04b49"
+build_time: [1564143151, 345099000]
+inputs:
+  "/Users/misiek/Desktop/TODO/TODO/AddViewController.swift": [1564142737, 248662572]
+  "/Users/misiek/Desktop/TODO/TODO/ViewController.swift": [1564142635, 199649479]
+  "/Users/misiek/Desktop/TODO/TODO/AppDelegate.swift": [1564139116, 835995878]
+  "/Users/misiek/Desktop/TODO/TODO/InfoViewController.swift": [1564143142, 293310050]
+  "/Users/misiek/Desktop/TODO/build/TODO.build/Debug-iphoneos/TODO.build/DerivedSources/CoreDataGenerated/ToDoItem/ToDoItem+CoreDataClass.swift": [1564141093, 743709193]
+  "/Users/misiek/Desktop/TODO/build/TODO.build/Debug-iphoneos/TODO.build/DerivedSources/CoreDataGenerated/ToDoItem/ToDoItem+CoreDataProperties.swift": [1564141093, 747342863]
+  "/Users/misiek/Desktop/TODO/build/TODO.build/Debug-iphoneos/TODO.build/DerivedSources/CoreDataGenerated/ToDoItem/ToDoItem+CoreDataModel.swift": [1564141093, 740372244]

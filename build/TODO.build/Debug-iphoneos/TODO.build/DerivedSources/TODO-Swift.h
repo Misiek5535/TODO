@@ -187,14 +187,17 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 #endif
 
 @class UITextField;
+@class UISwitch;
 @class NSBundle;
 @class NSCoder;
 
 SWIFT_CLASS("_TtC4TODO17AddViewController")
 @interface AddViewController : UIViewController
 @property (nonatomic, weak) IBOutlet UITextField * _Null_unspecified newToDoTextField;
+@property (nonatomic, weak) IBOutlet UISwitch * _Null_unspecified Important;
 - (void)viewDidLoad;
-- (IBAction)addClicked:(id _Nonnull)sender;
+- (void)Add;
+- (void)backAction;
 - (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 @end
@@ -217,7 +220,11 @@ SWIFT_CLASS("_TtC4TODO11AppDelegate")
 
 SWIFT_CLASS("_TtC4TODO18InfoViewController")
 @interface InfoViewController : UIViewController
+@property (nonatomic, weak) IBOutlet UITextField * _Null_unspecified ToDoItemName;
 - (void)viewDidLoad;
+- (IBAction)CompleteToDO:(id _Nonnull)sender;
+- (void)deleteToDoItem;
+- (void)backAction;
 - (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 @end
@@ -232,12 +239,12 @@ SWIFT_CLASS_NAMED("ToDoItem")
 
 
 @interface ToDoItem (SWIFT_EXTENSION(TODO))
-@property (nonatomic, copy) NSDate * _Nullable dateadded;
 @property (nonatomic, copy) NSString * _Nullable name;
 @end
 
 @class UITableView;
 @class UITableViewCell;
+@class UIStoryboardSegue;
 
 SWIFT_CLASS("_TtC4TODO14ViewController")
 @interface ViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
@@ -247,7 +254,8 @@ SWIFT_CLASS("_TtC4TODO14ViewController")
 - (NSInteger)tableView:(UITableView * _Nonnull)tableView numberOfRowsInSection:(NSInteger)section SWIFT_WARN_UNUSED_RESULT;
 - (UITableViewCell * _Nonnull)tableView:(UITableView * _Nonnull)tableView cellForRowAtIndexPath:(NSIndexPath * _Nonnull)indexPath SWIFT_WARN_UNUSED_RESULT;
 - (void)tableView:(UITableView * _Nonnull)tableView didSelectRowAtIndexPath:(NSIndexPath * _Nonnull)indexPath;
-- (IBAction)addClicked:(id _Nonnull)sender;
+- (void)prepareForSegue:(UIStoryboardSegue * _Nonnull)segue sender:(id _Nullable)sender;
+- (void)Add;
 - (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 @end
