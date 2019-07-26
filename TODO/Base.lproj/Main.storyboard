@@ -64,13 +64,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="afu-UQ-GFH">
-                                <rect key="frame" x="126.5" y="254" width="67" height="30"/>
-                                <state key="normal" title="Complete"/>
-                                <connections>
-                                    <action selector="CompleteToDO:" destination="6LD-Bs-aAi" eventType="touchUpInside" id="mKA-iw-9h3"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e71-uJ-SR5">
                                 <rect key="frame" x="50" y="75" width="51" height="21"/>
                                 <constraints>
@@ -98,16 +91,12 @@
                             <constraint firstItem="cI8-gC-W9R" firstAttribute="top" secondItem="Hq3-Al-orH" secondAttribute="top" constant="40" id="3tW-L6-7jd"/>
                             <constraint firstItem="Hq3-Al-orH" firstAttribute="trailing" secondItem="WuM-qS-gSn" secondAttribute="trailing" constant="176" id="54O-MN-ecP"/>
                             <constraint firstItem="XNg-mp-gi7" firstAttribute="leading" secondItem="Hq3-Al-orH" secondAttribute="leading" constant="40" id="BVg-GT-ToL"/>
-                            <constraint firstItem="XNg-mp-gi7" firstAttribute="centerX" secondItem="afu-UQ-GFH" secondAttribute="centerX" id="GsY-jI-muS"/>
                             <constraint firstItem="WuM-qS-gSn" firstAttribute="leading" secondItem="Hq3-Al-orH" secondAttribute="leading" constant="50" id="Jec-bW-WmH"/>
                             <constraint firstItem="cI8-gC-W9R" firstAttribute="leading" secondItem="Hq3-Al-orH" secondAttribute="leading" constant="50" id="MGq-kf-4IS"/>
-                            <constraint firstItem="afu-UQ-GFH" firstAttribute="top" secondItem="XNg-mp-gi7" secondAttribute="bottom" constant="8" id="OOe-L1-CAo"/>
-                            <constraint firstItem="afu-UQ-GFH" firstAttribute="centerX" secondItem="cI8-gC-W9R" secondAttribute="centerX" id="Qui-A4-q8N"/>
                             <constraint firstItem="Hq3-Al-orH" firstAttribute="trailing" secondItem="cI8-gC-W9R" secondAttribute="trailing" constant="50" id="iSa-2I-Llp"/>
                             <constraint firstItem="XNg-mp-gi7" firstAttribute="top" secondItem="WuM-qS-gSn" secondAttribute="bottom" constant="8" symbolic="YES" id="myH-uA-Gb0"/>
                             <constraint firstItem="cI8-gC-W9R" firstAttribute="top" secondItem="e71-uJ-SR5" secondAttribute="bottom" constant="8" id="sDB-UL-NcV"/>
                             <constraint firstItem="WuM-qS-gSn" firstAttribute="top" secondItem="cI8-gC-W9R" secondAttribute="bottom" constant="8" id="uvK-Aw-gp9"/>
-                            <constraint firstItem="afu-UQ-GFH" firstAttribute="top" secondItem="XNg-mp-gi7" secondAttribute="bottom" constant="8" symbolic="YES" id="zav-Iq-Rs8"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Hq3-Al-orH"/>
                     </view>
@@ -185,41 +174,42 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Icon by Smashicons" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2l5-wb-hd5">
-                                <rect key="frame" x="76" y="498" width="168" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="flaticon.com" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1H2-dg-gev">
-                                <rect key="frame" x="112.5" y="527" width="95" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="To Do App By Michał Jarosz" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0TP-Fs-e1L">
                                 <rect key="frame" x="53" y="274" width="214" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="YWl-34-daI">
+                                <rect key="frame" x="40" y="477" width="240" height="71"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="71" id="FaV-Tf-3DD"/>
+                                    <constraint firstAttribute="width" constant="240" id="apQ-Aq-fYm"/>
+                                    <constraint firstAttribute="height" constant="71" id="yfX-Fe-Te7"/>
+                                </constraints>
+                                <string key="text">Icons by Smashicons and 
+ Eleonor Wang
+https://www.flaticon.com/</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <dataDetectorType key="dataDetectorTypes" link="YES"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="1H2-dg-gev" firstAttribute="centerX" secondItem="2l5-wb-hd5" secondAttribute="centerX" id="7uG-Av-g3J"/>
+                            <constraint firstAttribute="bottom" secondItem="YWl-34-daI" secondAttribute="bottom" constant="20" symbolic="YES" id="84q-ea-ZjF"/>
+                            <constraint firstItem="YWl-34-daI" firstAttribute="centerX" secondItem="Sol-uM-8I2" secondAttribute="centerX" id="MYb-RY-qQF"/>
                             <constraint firstItem="0TP-Fs-e1L" firstAttribute="top" secondItem="iA7-dc-yKw" secondAttribute="top" constant="210" id="Taj-yt-cGL"/>
+                            <constraint firstItem="YWl-34-daI" firstAttribute="centerX" secondItem="0TP-Fs-e1L" secondAttribute="centerX" id="UGc-tJ-alX"/>
                             <constraint firstItem="0TP-Fs-e1L" firstAttribute="centerY" secondItem="Sol-uM-8I2" secondAttribute="centerY" id="aKK-h7-VRZ"/>
-                            <constraint firstAttribute="bottom" secondItem="1H2-dg-gev" secondAttribute="bottom" constant="20" symbolic="YES" id="cDq-eO-syT"/>
-                            <constraint firstItem="2l5-wb-hd5" firstAttribute="centerX" secondItem="Sol-uM-8I2" secondAttribute="centerX" id="eOm-9F-7fn"/>
-                            <constraint firstItem="1H2-dg-gev" firstAttribute="top" secondItem="2l5-wb-hd5" secondAttribute="bottom" constant="4" id="gjf-id-OfW"/>
-                            <constraint firstItem="0TP-Fs-e1L" firstAttribute="centerX" secondItem="2l5-wb-hd5" secondAttribute="centerX" id="kpj-1h-P0R"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="iA7-dc-yKw"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VTj-Ka-evg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2732" y="33"/>
+            <point key="canvasLocation" x="2731.875" y="32.74647887323944"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="JHh-Iy-IYh">

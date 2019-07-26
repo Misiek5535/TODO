@@ -23,7 +23,6 @@ class AddViewController: UIViewController {
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "< Back", style: .plain, target: self, action: #selector(backAction))
     }
     
-    //navigationitem
     @objc func Add() {
         if newToDoTextField.text != "" {
             
@@ -32,22 +31,23 @@ class AddViewController: UIViewController {
                 let toDoItem = ToDoItem(context: context)
                 var name = ""
                 if Important.isOn {
+                    //not best idea, as it can be deleted when changing name
                     name = "❗️"
                     Important.isEnabled = false
                     toDoItem.important = true
                 }
-                
+
                 name += (newToDoTextField.text)!
-                
+
                 toDoItem.name = name
                 toDoItem.todo_description = ""
 
                 (UIApplication.shared.delegate as? AppDelegate)?.saveContext()
-                
+
                 ReloadPreviousVC()
-                
+
                 newToDoTextField.text = ""
-                _ = navigationController?.popToRootViewController(animated: true)
+                self.navigationController?.popViewController(animated: true)
             }
         }
     }

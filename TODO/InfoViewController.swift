@@ -33,10 +33,6 @@ class InfoViewController: UIViewController {
 //        navigationItem.rightBarButtonItem = UIBarButtonItem(image: deleteImage, style: .plain, target: self, action: #selector(deleteToDoItem))
     }
     
-    @IBAction func CompleteToDO(_ sender: Any) {
-        deleteToDoItem()
-    }
-    
     func editName() {
         if let context = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext {
             
@@ -64,9 +60,9 @@ class InfoViewController: UIViewController {
             
             (UIApplication.shared.delegate as? AppDelegate)?.saveContext()
             
-            ReloadPreviousVC()
             self.navigationController?.popViewController(animated: true)
         }
+        ReloadPreviousVC()
     }
     
     @objc func backAction() {

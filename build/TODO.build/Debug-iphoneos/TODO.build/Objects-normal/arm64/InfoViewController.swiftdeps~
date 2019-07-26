@@ -6,7 +6,6 @@ provides-nominal:
 provides-member:
 - ["4TODO18InfoViewControllerC", ""]
 provides-dynamic-lookup:
-- "CompleteToDO"
 - "ToDoItemDescription"
 - "ToDoItemName"
 - "backAction"
@@ -249,7 +248,6 @@ depends-member:
 - !private ["SH", "viewContext"]
 - !private ["SH", "viewDidLoad"]
 - !private ["4TODO18InfoViewControllerC", "AppDelegate"]
-- ["4TODO18InfoViewControllerC", "CompleteToDO"]
 - ["4TODO18InfoViewControllerC", "ReloadPreviousVC"]
 - ["4TODO18InfoViewControllerC", "ToDoItem"]
 - ["4TODO18InfoViewControllerC", "ToDoItemDescription"]
@@ -344,7 +342,6 @@ depends-member:
 - !private ["So22NSManagedObjectContextC", "delete"]
 - !private ["So22NSManagedObjectContextC", "object"]
 - !private ["So8NSObjectC", "AppDelegate"]
-- ["So8NSObjectC", "CompleteToDO"]
 - ["So8NSObjectC", "ReloadPreviousVC"]
 - ["So8NSObjectC", "ToDoItem"]
 - ["So8NSObjectC", "ToDoItemDescription"]
@@ -566,7 +563,6 @@ depends-member:
 - !private ["So30UIPasteConfigurationSupportingP", "toDoItem"]
 - !private ["So30UIPasteConfigurationSupportingP", "viewDidLoad"]
 - !private ["So11UIResponderC", "AppDelegate"]
-- ["So11UIResponderC", "CompleteToDO"]
 - ["So11UIResponderC", "ReloadPreviousVC"]
 - ["So11UIResponderC", "ToDoItem"]
 - ["So11UIResponderC", "ToDoItemDescription"]
@@ -718,7 +714,6 @@ depends-member:
 - !private ["So6UIViewC", "layer"]
 - !private ["So6UIViewC", "text"]
 - !private ["So16UIViewControllerC", "AppDelegate"]
-- ["So16UIViewControllerC", "CompleteToDO"]
 - ["So16UIViewControllerC", "ReloadPreviousVC"]
 - ["So16UIViewControllerC", "ToDoItem"]
 - ["So16UIViewControllerC", "ToDoItemDescription"]
@@ -896,4 +891,4 @@ depends-external:
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.4.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIKit.apinotes"
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.4.sdk/System/Library/Frameworks/CoreText.framework/Headers/CoreText.apinotes"
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.4.sdk/System/Library/Frameworks/Security.framework/Headers/Security.apinotes"
-interface-hash: "8d847be1889be84052cbf4aecf040e47"
+interface-hash: "de6508b9f5f5d7c060731a563fdd18dc"

@@ -86,5 +86,38 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     @objc func AboutApp() {
         performSegue(withIdentifier: "aboutSegue", sender: nil)
     }
+    
+    //swipe to complete
+    func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let complete = completeAction(at: indexPath)
+        
+        return UISwipeActionsConfiguration(actions: [complete])
+    }
+    
+    func completeAction(at indexPath: IndexPath) -> UIContextualAction {
+        let action = UIContextualAction(style: .destructive, title: "Complete") { (action, view, complete) in
+            //delete from context
+            if let context = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext {
+                
+                context.delete(self.toDoItems[indexPath.row])
+                
+                (UIApplication.shared.delegate as? AppDelegate)?.saveContext()
+            }
+            //delete from tableview
+            self.toDoItems.remove(at: indexPath.row)
+            self.taskTableView.deleteRows(at: [indexPath], with: .automatic)
+            complete(true)
+        }
+        action.image = UIImage(named: "Check")
+        action.backgroundColor = .green
+        
+        return action
+    }
+    
+    //override swipe to not show delete
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        
+        return UISwipeActionsConfiguration(actions: [])
+    }
 }
 
