@@ -217,11 +217,12 @@ SWIFT_CLASS("_TtC4TODO11AppDelegate")
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
+@class UITextView;
 
 SWIFT_CLASS("_TtC4TODO18InfoViewController")
 @interface InfoViewController : UIViewController
 @property (nonatomic, weak) IBOutlet UITextField * _Null_unspecified ToDoItemName;
-@property (nonatomic, weak) IBOutlet UITextField * _Null_unspecified ToDoItemDescription;
+@property (nonatomic, weak) IBOutlet UITextView * _Null_unspecified ToDoItemDescription;
 - (void)viewDidLoad;
 - (IBAction)CompleteToDO:(id _Nonnull)sender;
 - (void)deleteToDoItem;

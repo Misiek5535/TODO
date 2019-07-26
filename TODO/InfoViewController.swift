@@ -11,7 +11,7 @@ import UIKit
 class InfoViewController: UIViewController {
 
     @IBOutlet weak var ToDoItemName: UITextField!
-    @IBOutlet weak var ToDoItemDescription: UITextField!
+    @IBOutlet weak var ToDoItemDescription: UITextView!
     
     var toDoItem = ToDoItem()
     var previousVC = ViewController()
@@ -22,6 +22,8 @@ class InfoViewController: UIViewController {
         // Do any additional setup after loading the view.
         ToDoItemName.text = toDoItem.name
         ToDoItemDescription.text = toDoItem.todo_description
+        ToDoItemDescription.layer.borderWidth = 0.5
+        ToDoItemDescription.layer.borderColor = UIColor.lightGray.cgColor
         
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "< Back", style: .plain, target: self, action: #selector(backAction))
         
