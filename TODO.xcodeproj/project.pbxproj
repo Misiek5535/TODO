@@ -13,6 +13,9 @@
 		1559876622E9D8EE00898D1B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1559876522E9D8EE00898D1B /* Assets.xcassets */; };
 		1559876922E9D8EE00898D1B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1559876722E9D8EE00898D1B /* LaunchScreen.storyboard */; };
 		1559877622EA029C00898D1B /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1559877522EA029C00898D1B /* InfoViewController.swift */; };
+		155EE8E122F89818002CE434 /* CompletedInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 155EE8E022F89818002CE434 /* CompletedInfoViewController.swift */; };
+		15CE04AD22EF58B80035AEC2 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15CE04AC22EF58B80035AEC2 /* SettingsViewController.swift */; };
+		15D7006522F36EBF00D91556 /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15D7006422F36EBF00D91556 /* HistoryViewController.swift */; };
 		15F8869A22EA268B000D51E5 /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15F8869922EA268B000D51E5 /* AddViewController.swift */; };
 		15F8869D22EAF5FE000D51E5 /* ToDoItem.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 15F8869B22EAF5FE000D51E5 /* ToDoItem.xcdatamodeld */; };
 /* End PBXBuildFile section */
@@ -26,6 +29,9 @@
 		1559876822E9D8EE00898D1B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1559876A22E9D8EE00898D1B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1559877522EA029C00898D1B /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
+		155EE8E022F89818002CE434 /* CompletedInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompletedInfoViewController.swift; sourceTree = "<group>"; };
+		15CE04AC22EF58B80035AEC2 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SettingsViewController.swift; path = ../SettingsViewController.swift; sourceTree = "<group>"; };
+		15D7006422F36EBF00D91556 /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
 		15F8869922EA268B000D51E5 /* AddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
 		15F8869C22EAF5FE000D51E5 /* ToDoItem.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ToDoItem.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -64,6 +70,9 @@
 				1559875D22E9D8EE00898D1B /* ViewController.swift */,
 				15F8869922EA268B000D51E5 /* AddViewController.swift */,
 				1559877522EA029C00898D1B /* InfoViewController.swift */,
+				15CE04AC22EF58B80035AEC2 /* SettingsViewController.swift */,
+				15D7006422F36EBF00D91556 /* HistoryViewController.swift */,
+				155EE8E022F89818002CE434 /* CompletedInfoViewController.swift */,
 				1559875F22E9D8EE00898D1B /* Main.storyboard */,
 				1559876522E9D8EE00898D1B /* Assets.xcassets */,
 				1559876722E9D8EE00898D1B /* LaunchScreen.storyboard */,
@@ -148,7 +157,10 @@
 				1559875E22E9D8EE00898D1B /* ViewController.swift in Sources */,
 				1559875C22E9D8EE00898D1B /* AppDelegate.swift in Sources */,
 				15F8869D22EAF5FE000D51E5 /* ToDoItem.xcdatamodeld in Sources */,
+				155EE8E122F89818002CE434 /* CompletedInfoViewController.swift in Sources */,
 				1559877622EA029C00898D1B /* InfoViewController.swift in Sources */,
+				15D7006522F36EBF00D91556 /* HistoryViewController.swift in Sources */,
+				15CE04AD22EF58B80035AEC2 /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

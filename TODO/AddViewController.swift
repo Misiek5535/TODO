@@ -19,8 +19,11 @@ class AddViewController: UIViewController {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
+        
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Add", style: .plain, target: self, action: #selector(Add))
-        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "< Back", style: .plain, target: self, action: #selector(backAction))
+        
+        navigationItem.leftBarButtonItems?.append(UIBarButtonItem(image: UIImage(named: "back"), style: .plain, target: self, action: #selector(backAction)))
+        navigationItem.leftBarButtonItems?.append(UIBarButtonItem(title: "Back", style: .plain, target: self, action: #selector(backAction)))
     }
     
     @objc func Add() {
@@ -41,6 +44,10 @@ class AddViewController: UIViewController {
 
                 toDoItem.name = name
                 toDoItem.todo_description = ""
+                toDoItem.completed = false
+                let date = CurrentDate()
+                toDoItem.date_str = dateToStr(date: date)
+                toDoItem.date_date = date
 
                 (UIApplication.shared.delegate as? AppDelegate)?.saveContext()
 
@@ -58,5 +65,16 @@ class AddViewController: UIViewController {
     
     func ReloadPreviousVC() {
         previousVC.getToDoItems()
+    }
+    
+    func CurrentDate() -> Date {
+        return Date()
+    }
+    
+    func dateToStr(date: Date) -> String {
+        let date = Date()
+        let dateformatter = DateFormatter()
+        dateformatter.dateFormat = "dd-MM-yyyy"
+        return dateformatter.string(from: date)
     }
 }

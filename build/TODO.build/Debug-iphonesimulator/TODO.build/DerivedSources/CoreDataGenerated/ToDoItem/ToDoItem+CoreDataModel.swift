@@ -2,7 +2,7 @@
 //  ToDoItem+CoreDataModel.swift
 //  
 //
-//  Created by Michał Jarosz on 26/07/2019.
+//  Created by Michał Jarosz on 06/08/2019.
 //
 //  This file was automatically generated and should not be edited.
 //

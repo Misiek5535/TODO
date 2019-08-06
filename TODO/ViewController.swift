@@ -7,11 +7,11 @@
 //
 
 import UIKit
+import CoreData
 
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     @IBOutlet weak var taskTableView: UITableView!
-    @IBOutlet weak var newToDoName: UITextField!
     
     var toDoItems : [ToDoItem] = []
     
@@ -19,11 +19,12 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
-        //about app button
-        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "About", style: .plain, target: self, action: #selector(AboutApp))
+        //settings button -> settings VC -> about VC
+        navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "settings-2"), style: .plain, target: self, action: #selector(Settings))
         
         //add button
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Add", style: .plain, target: self, action: #selector(Add))
+        
         //app name
         navigationItem.title = "To Do"
         
@@ -33,28 +34,59 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         getToDoItems()
     }
     
+    //COREDATA
     func getToDoItems() {
         //get to do items from coredata
         
         if let context = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext {
             
             do {
-                //set to class property
                 toDoItems = try context.fetch(ToDoItem.fetchRequest())
             } catch {}
+        }
+        
+        for todoitem in toDoItems {
+            if todoitem.completed == true {
+                let index = toDoItems.firstIndex(of: todoitem)!
+                toDoItems.remove(at: index)
+            }
         }
         
         taskTableView.reloadData()
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return toDoItems.count
+        var count = 0;
+
+        for todoitem in toDoItems {
+            if !todoitem.completed {
+                count += 1
+            }
+        }
+
+        return count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell()
         cell.textLabel?.text = toDoItems[indexPath.row].name
         return cell
+    }
+    
+    
+    //SEGUE
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "infoSegue" {
+            let defVC = segue.destination as! InfoViewController
+            defVC.toDoItem = sender as! ToDoItem
+            defVC.previousVC = self
+        } else if segue.identifier == "addSegue" {
+            let defVC = segue.destination as! AddViewController
+            defVC.previousVC = self
+        } else if segue.identifier == "settingsSegue" {
+            let defVC = segue.destination as! SettingsViewController
+            defVC.previousVC = self
+        }
     }
     
     //segue to info
@@ -64,29 +96,17 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         performSegue(withIdentifier: "infoSegue", sender: sender)
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "infoSegue" {
-            let defVC = segue.destination as! InfoViewController
-            defVC.toDoItem = sender as! ToDoItem
-            defVC.previousVC = self
-        } else if segue.identifier == "addSegue" {
-            let defVC = segue.destination as! AddViewController
-            defVC.previousVC = self
-        }
-        
-        
-    }
-    
     //segue to add
     @objc func Add() {
         performSegue(withIdentifier: "addSegue", sender: nil)
     }
     
-    //segue to about app
-    @objc func AboutApp() {
-        performSegue(withIdentifier: "aboutSegue", sender: nil)
+    //segue to settings
+    @objc func Settings() {
+        performSegue(withIdentifier: "settingsSegue", sender: nil)
     }
     
+    //SWIPES
     //swipe to complete
     func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         let complete = completeAction(at: indexPath)
@@ -99,7 +119,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             //delete from context
             if let context = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext {
                 
-                context.delete(self.toDoItems[indexPath.row])
+                let toDoItem = self.toDoItems[indexPath.row]
+                context.object(with: toDoItem.objectID).setValue(true, forKey: "completed")
                 
                 (UIApplication.shared.delegate as? AppDelegate)?.saveContext()
             }
@@ -116,7 +137,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     //override swipe to not show delete
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-        
         return UISwipeActionsConfiguration(actions: [])
     }
 }

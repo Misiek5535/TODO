@@ -2,7 +2,7 @@
 //  ToDoItem+CoreDataProperties.swift
 //  
 //
-//  Created by Michał Jarosz on 26/07/2019.
+//  Created by Michał Jarosz on 07/08/2019.
 //
 //  This file was automatically generated and should not be edited.
 //
@@ -17,6 +17,9 @@ extension ToDoItem {
         return NSFetchRequest<ToDoItem>(entityName: "ToDoItem")
     }
 
+    @NSManaged public var completed: Bool
+    @NSManaged public var date_date: Date?
+    @NSManaged public var date_str: String?
     @NSManaged public var important: Bool
     @NSManaged public var name: String?
     @NSManaged public var todo_description: String?

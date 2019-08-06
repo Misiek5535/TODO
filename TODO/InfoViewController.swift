@@ -12,6 +12,7 @@ class InfoViewController: UIViewController {
 
     @IBOutlet weak var ToDoItemName: UITextField!
     @IBOutlet weak var ToDoItemDescription: UITextView!
+    @IBOutlet weak var ToDoItemDateAdded: UILabel!
     
     var toDoItem = ToDoItem()
     var previousVC = ViewController()
@@ -22,15 +23,27 @@ class InfoViewController: UIViewController {
         // Do any additional setup after loading the view.
         ToDoItemName.text = toDoItem.name
         ToDoItemDescription.text = toDoItem.todo_description
+        ToDoItemDateAdded.text = toDoItem.date_str
+        //description boarder
         ToDoItemDescription.layer.borderWidth = 0.5
         ToDoItemDescription.layer.borderColor = UIColor.lightGray.cgColor
         
-        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "< Back", style: .plain, target: self, action: #selector(backAction))
-        
-        //let deleteImage = UIImage(named: "rubbish-bin")
-        
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Delete", style: .plain, target: self, action: #selector(deleteToDoItem))
-//        navigationItem.rightBarButtonItem = UIBarButtonItem(image: deleteImage, style: .plain, target: self, action: #selector(deleteToDoItem))
+        //delete bar button "image"
+        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "Trash-can"), style: .plain, target: self, action: #selector(deleteToDoItem))
+        navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(backAction))
+        //back bar button and save changes
+//        navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "back"), style: .plain, target: self, action: #selector(backAction))
+//        navigationItem.leftBarButtonItems?.append(UIBarButtonItem(title: "Back", style: .plain, target: self, action: #selector(backAction)))
+    }
+    
+    @IBAction func Complete(_ sender: Any) {
+        if let context = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext {
+            
+            context.object(with: toDoItem.objectID).setValue(true, forKey: "completed")
+            
+            (UIApplication.shared.delegate as? AppDelegate)?.saveContext()
+        }
+        backAction()
     }
     
     func editName() {
@@ -39,7 +52,6 @@ class InfoViewController: UIViewController {
             context.object(with: toDoItem.objectID).setValue(ToDoItemName.text, forKey: "name")
             
             (UIApplication.shared.delegate as? AppDelegate)?.saveContext()
-            ReloadPreviousVC()
         }
     }
     
@@ -49,7 +61,6 @@ class InfoViewController: UIViewController {
             context.object(with: toDoItem.objectID).setValue(ToDoItemDescription.text, forKey: "todo_description")
             
             (UIApplication.shared.delegate as? AppDelegate)?.saveContext()
-            ReloadPreviousVC()
         }
     }
     
@@ -62,22 +73,21 @@ class InfoViewController: UIViewController {
             
             self.navigationController?.popViewController(animated: true)
         }
-        ReloadPreviousVC()
+        reloadPreviousVC()
     }
     
     @objc func backAction() {
         if ToDoItemName.text != toDoItem.name {
             editName()
         }
-        
         if ToDoItemDescription.text != toDoItem.todo_description {
             editDescription()
         }
-        
+        reloadPreviousVC()
         self.navigationController?.popViewController(animated: true)
     }
     
-    func ReloadPreviousVC() {
+    func reloadPreviousVC() {
         previousVC.getToDoItems()
     }
 }

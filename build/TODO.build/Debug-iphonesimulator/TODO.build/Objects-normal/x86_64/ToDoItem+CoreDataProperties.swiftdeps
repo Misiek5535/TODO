@@ -4,15 +4,22 @@ provides-nominal:
 provides-member:
 - ["4TODO8ToDoItemC", ""]
 - ["4TODO8ToDoItemC", "fetchRequest"]
+- ["4TODO8ToDoItemC", "completed"]
+- ["4TODO8ToDoItemC", "date_date"]
+- ["4TODO8ToDoItemC", "date_str"]
 - ["4TODO8ToDoItemC", "important"]
 - ["4TODO8ToDoItemC", "name"]
 - ["4TODO8ToDoItemC", "todo_description"]
 provides-dynamic-lookup:
+- "completed"
+- "date_date"
+- "date_str"
 - "important"
 - "name"
 - "todo_description"
 depends-top-level:
 - "Bool"
+- "Date"
 - "NSFetchRequest"
 - "String"
 - !private "StringLiteralType"
@@ -33,17 +40,25 @@ depends-member:
 - !private ["So14NSFetchRequestC", "init"]
 - !private ["So20NSFetchRequestResultP", "NSFetchRequest"]
 - ["So15NSManagedObjectC", "Bool"]
+- ["So15NSManagedObjectC", "Date"]
 - ["So15NSManagedObjectC", "NSFetchRequest"]
 - ["So15NSManagedObjectC", "String"]
 - ["So15NSManagedObjectC", "ToDoItem"]
+- ["So15NSManagedObjectC", "completed"]
+- ["So15NSManagedObjectC", "date_date"]
+- ["So15NSManagedObjectC", "date_str"]
 - ["So15NSManagedObjectC", "fetchRequest"]
 - ["So15NSManagedObjectC", "important"]
 - ["So15NSManagedObjectC", "name"]
 - ["So15NSManagedObjectC", "todo_description"]
 - ["So8NSObjectC", "Bool"]
+- ["So8NSObjectC", "Date"]
 - ["So8NSObjectC", "NSFetchRequest"]
 - ["So8NSObjectC", "String"]
 - ["So8NSObjectC", "ToDoItem"]
+- ["So8NSObjectC", "completed"]
+- ["So8NSObjectC", "date_date"]
+- ["So8NSObjectC", "date_str"]
 - ["So8NSObjectC", "fetchRequest"]
 - ["So8NSObjectC", "important"]
 - !private ["So8NSObjectC", "init"]
@@ -53,9 +68,13 @@ depends-member:
 - !private ["So8NSObjectP", "init"]
 - !private ["So24NSPersistentStoreRequestC", "init"]
 - ["4TODO8ToDoItemC", "Bool"]
+- ["4TODO8ToDoItemC", "Date"]
 - ["4TODO8ToDoItemC", "NSFetchRequest"]
 - ["4TODO8ToDoItemC", "String"]
 - ["4TODO8ToDoItemC", "ToDoItem"]
+- ["4TODO8ToDoItemC", "completed"]
+- ["4TODO8ToDoItemC", "date_date"]
+- ["4TODO8ToDoItemC", "date_str"]
 - ["4TODO8ToDoItemC", "deinit"]
 - ["4TODO8ToDoItemC", "fetchRequest"]
 - ["4TODO8ToDoItemC", "important"]
@@ -107,4 +126,4 @@ depends-external:
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator12.4.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIKit.apinotes"
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator12.4.sdk/System/Library/Frameworks/CoreText.framework/Headers/CoreText.apinotes"
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator12.4.sdk/System/Library/Frameworks/Security.framework/Headers/Security.apinotes"
-interface-hash: "aa69573897298e07ae229fac4744c3f3"
+interface-hash: "a30d405380c210f05217e17134ab4f38"

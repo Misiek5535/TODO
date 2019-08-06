@@ -217,14 +217,65 @@ SWIFT_CLASS("_TtC4TODO11AppDelegate")
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
+@class UITextView;
+@class UILabel;
+
+SWIFT_CLASS("_TtC4TODO27CompletedInfoViewController")
+@interface CompletedInfoViewController : UIViewController
+@property (nonatomic, weak) IBOutlet UITextField * _Null_unspecified ToDoItemNameTextField;
+@property (nonatomic, weak) IBOutlet UITextView * _Null_unspecified ToDoItemDescriptionTextView;
+@property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified ToDoItemDateLabel;
+- (void)viewDidLoad;
+- (IBAction)AddBack:(id _Nonnull)sender;
+- (void)backAction;
+- (void)deleteToDo;
+- (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+@class UITableView;
+@class UITableViewCell;
+@class UIStoryboardSegue;
+@class UISwipeActionsConfiguration;
+
+SWIFT_CLASS("_TtC4TODO21HistoryViewController")
+@interface HistoryViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
+@property (nonatomic, weak) IBOutlet UITableView * _Null_unspecified tableView;
+- (void)viewDidLoad;
+- (NSInteger)tableView:(UITableView * _Nonnull)tableView numberOfRowsInSection:(NSInteger)section SWIFT_WARN_UNUSED_RESULT;
+- (UITableViewCell * _Nonnull)tableView:(UITableView * _Nonnull)tableView cellForRowAtIndexPath:(NSIndexPath * _Nonnull)indexPath SWIFT_WARN_UNUSED_RESULT;
+- (void)prepareForSegue:(UIStoryboardSegue * _Nonnull)segue sender:(id _Nullable)sender;
+- (void)tableView:(UITableView * _Nonnull)tableView didSelectRowAtIndexPath:(NSIndexPath * _Nonnull)indexPath;
+- (void)clearHistory;
+- (UISwipeActionsConfiguration * _Nullable)tableView:(UITableView * _Nonnull)tableView trailingSwipeActionsConfigurationForRowAtIndexPath:(NSIndexPath * _Nonnull)indexPath SWIFT_WARN_UNUSED_RESULT;
+- (UISwipeActionsConfiguration * _Nullable)tableView:(UITableView * _Nonnull)tableView leadingSwipeActionsConfigurationForRowAtIndexPath:(NSIndexPath * _Nonnull)indexPath SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+@end
+
 
 SWIFT_CLASS("_TtC4TODO18InfoViewController")
 @interface InfoViewController : UIViewController
 @property (nonatomic, weak) IBOutlet UITextField * _Null_unspecified ToDoItemName;
-@property (nonatomic, weak) IBOutlet UITextField * _Null_unspecified ToDoItemDescription;
+@property (nonatomic, weak) IBOutlet UITextView * _Null_unspecified ToDoItemDescription;
+@property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified ToDoItemDateAdded;
 - (void)viewDidLoad;
-- (IBAction)CompleteToDO:(id _Nonnull)sender;
+- (IBAction)Complete:(id _Nonnull)sender;
 - (void)deleteToDoItem;
+- (void)backAction;
+- (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+@class UISegmentedControl;
+
+SWIFT_CLASS("_TtC4TODO22SettingsViewController")
+@interface SettingsViewController : UIViewController
+@property (nonatomic, weak) IBOutlet UISegmentedControl * _Null_unspecified ClearEvery;
+- (void)viewDidLoad;
+- (IBAction)clearEveryChanged:(id _Nonnull)sender;
+- (void)About;
+- (IBAction)segueHistoryVC:(id _Nonnull)sender;
 - (void)backAction;
 - (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
@@ -240,25 +291,27 @@ SWIFT_CLASS_NAMED("ToDoItem")
 
 
 @interface ToDoItem (SWIFT_EXTENSION(TODO))
+@property (nonatomic) BOOL completed;
+@property (nonatomic, copy) NSDate * _Nullable date_date;
+@property (nonatomic, copy) NSString * _Nullable date_str;
 @property (nonatomic) BOOL important;
 @property (nonatomic, copy) NSString * _Nullable name;
 @property (nonatomic, copy) NSString * _Nullable todo_description;
 @end
 
-@class UITableView;
-@class UITableViewCell;
-@class UIStoryboardSegue;
 
 SWIFT_CLASS("_TtC4TODO14ViewController")
 @interface ViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 @property (nonatomic, weak) IBOutlet UITableView * _Null_unspecified taskTableView;
-@property (nonatomic, weak) IBOutlet UITextField * _Null_unspecified newToDoName;
 - (void)viewDidLoad;
 - (NSInteger)tableView:(UITableView * _Nonnull)tableView numberOfRowsInSection:(NSInteger)section SWIFT_WARN_UNUSED_RESULT;
 - (UITableViewCell * _Nonnull)tableView:(UITableView * _Nonnull)tableView cellForRowAtIndexPath:(NSIndexPath * _Nonnull)indexPath SWIFT_WARN_UNUSED_RESULT;
-- (void)tableView:(UITableView * _Nonnull)tableView didSelectRowAtIndexPath:(NSIndexPath * _Nonnull)indexPath;
 - (void)prepareForSegue:(UIStoryboardSegue * _Nonnull)segue sender:(id _Nullable)sender;
+- (void)tableView:(UITableView * _Nonnull)tableView didSelectRowAtIndexPath:(NSIndexPath * _Nonnull)indexPath;
 - (void)Add;
+- (void)Settings;
+- (UISwipeActionsConfiguration * _Nullable)tableView:(UITableView * _Nonnull)tableView leadingSwipeActionsConfigurationForRowAtIndexPath:(NSIndexPath * _Nonnull)indexPath SWIFT_WARN_UNUSED_RESULT;
+- (UISwipeActionsConfiguration * _Nullable)tableView:(UITableView * _Nonnull)tableView trailingSwipeActionsConfigurationForRowAtIndexPath:(NSIndexPath * _Nonnull)indexPath SWIFT_WARN_UNUSED_RESULT;
 - (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 @end
